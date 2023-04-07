@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<!-- Created By CodingNepal - www.codingnepalweb.com -->
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!------<title> Website Layout | CodingLab</title>------>
+    <link rel="stylesheet" href="/css/home.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
+   </head>
+<body>
+
+  <nav>
+    <div class="menu">
+      <div class="logo">
+        <a href="#">Online Rent And Bid</a>
+      </div>
+      <ul>
+        <li><a href="index">Home</a></li>
+        <li><span><a href="#"th:text="${user.username}"}></a></span></li>
+        <li><a href="#" th:href="@{/logout}">LogOut</a></li>
+        <li><a href="#" th:href="@{/contactus}">Contact</a></li>
+        <li><a href="show-products">Available Product</a></li>
+      </ul>
+    </div>
+  </nav>
+  
+
+<br>
+<br>
+<br>
+<br>
+
+
+
+
+  <h1>Which Role You Want To Perform?</h1>
+<style>
+.btn-group button {
+  background-color: #04AA6D; /* Green background */
+  border: 1px solid green; /* Green border */
+  color: white; /* White text */
+  padding: 24px 24px; /* Some padding */
+  cursor: pointer; /* Pointer/hand icon */
+  float: center; /* Float the buttons side by side */
+}
+
+/* Clear floats (clearfix hack) */
+.btn-group:after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.btn-group button:not(:last-child) {
+  border-right: none; /* Prevent double borders */
+}
+
+/* Add a background color on hover */
+.btn-group button:hover {
+  background-color:red;
+}
+</style>
+<body>
+
+<h1>Choose Your Role</h1>
+
+<div class="btn-group">
+  <button name=rentee>
+  <a href="#" th:href="@{/user/show-products}">Rentee</a></button>
+  <button name=lender>
+  <a href="#" th:href="@{/user/lender}">Lender</a></button>
+</div>
+</body>
+</html>

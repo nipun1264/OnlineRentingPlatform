@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+
+<html lang = "en" xmlns:th="https://www.thymeleaf.org">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>ORBB-ProductInfo</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="icon" type="image/x-icon" href="img/fav.png">
+        <link rel="stylesheet" href="/css/home.css" th:href="@{css/register.css}">
+        <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+  />
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        <script src="https://cdn.tailwindcss.com"></script>
+    </head>
+    
+    <body>
+    <body>
+
+  <nav>
+    <div class="menu">
+      <div class="logo">
+        <a href="#">Online Rent And Bid</a>
+      </div>
+      <ul>
+        <li><a href="index">Home</a></li>
+        <li><span><a href="#"th:text="${user.username}"}></a></span></li>
+        <li><a href="#" th:href="@{/logout}">LogOut</a></li>
+        <li><a href="#" th:href="@{/contactus}">Contact</a></li>
+        <li><a href="show-products">Available Product</a></li>
+      </ul>
+    </div>
+  </nav>
+  
+
+<br>
+<br>
+<br>
+<br>
+
+    
+    
+    
+    
+   <div class="container-fluid my-5">
+            <h2 class="h2 text-danger text-center mb-5">Put Product details here</h2>
+            <form class="row g-3 text-center w-75 mx-auto"  th:object="${product}" enctype="multipart/form-data" th:action="@{/user/process-product}" method="post" >
+            
+            
+             
+             
+             
+                <div class="col-md-3">
+                  <label for="inputEmail4" class="form-label">Product Type</label>
+                  <input type="text" class="form-control" id="producttype" name="type" required >
+                </div>
+             </br>
+             
+                <div class="col-md-3">
+                  <label for="inputEmail5" class="form-label">Product expected Price</label>
+                  <input type="text" class="form-control" id="expectedprice" name="expectedprice" required >
+                </div>
+             </br>
+                
+             
+             	<div class="col-md-3">
+                  <label for="inputEmail6" class="form-label">Rent Duration</label>
+                  <input type="text" class="form-control" id="rentduration" name="rentduration" required >
+                </div>
+             </br>
+             
+             	<div class="col-md-3">
+                  <label for="inputEmail7" class="form-label">About</label>
+                  <input type="text" class="form-control" id="details" name="details" required >
+                </div>
+             
+             </br>
+                
+            
+            
+            <div class "form-group form-check">
+            <input type ="checkbox"
+            name="agreement"
+            class = "form-check-input"
+            id="agreement"
+                />
+                <label for="agreement">Accept Terms And Condition</label>
+                <div class="col-12">
+                  <button type="submit" class="btn btn-outline-dark">Submit</button>
+                </div>
+              </form>
+        </div>
+
+        <script th:src="@{js/wow.min.js}"></script>
+              <script>
+              new WOW().init();
+              </script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+    </body>
+</html>
